@@ -16,7 +16,7 @@ function App() {
   // Using useEffect to call the API once mounted and set the data
   useEffect(() => {
     (async () => {
-      const result = await axios("https://www.anapioficeandfire.com/api/books");
+      const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
       setData(result.data);
     })();
   }, []);
@@ -32,8 +32,11 @@ function App() {
           {
             Header: "Name",
             accessor: "show.name"
+          },
+          {
+            Header: "Isbn",
+            accessor: "show.type"
           }
-          
         ]
       },
       {
@@ -42,24 +45,20 @@ function App() {
         // Second group columns
         columns: [
           {
-            Header: "Isbn",
-            accessor: "show.isbn"
-          },
-          {
-            Header: "Author(s)",
-            accessor: "show.authors"
-          },
-          {
-            Header: "Number Of Pages",
-            accessor: "show.numberOfPages"
+            Header: "Authors",
+            accessor: "show.language"
           },
           {
             Header: "Publisher",
-            accessor: "show.publisher"
+            accessor: "show.genres"
           },
           {
-            Header: "Country",
-            accessor: "show.country"
+            Header: "Media Type",
+            accessor: "show.runtime"
+          },
+          {
+            Header: "Released",
+            accessor: "show.status"
           }
         ]
       }

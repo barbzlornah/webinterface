@@ -3,7 +3,7 @@ import React from 'react'
 const Characters = () => {
     return (
         <div>
-            <h2>Characters</h2>
+            
         </div>
     )
 }
